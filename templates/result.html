@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ risk_name }} Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>{{ risk_name }} Risk Result</h2>
+    <p>
+      <strong>Risk Level:</strong>
+      <span class="risk-badge {% if 'High' in risk_label %}high{% else %}low{% endif %}">{{ risk_label }}</span>
+    <!--</p>
+
+    {% if explain_data %}
+  <h4>Top Contributing Factors for Your Prediction:</h4>
+  <ul>
+    {% for feature, value in explain_data.items() %}
+      <li><b>{{ feature }}</b>: {{ value }}</li>
+    {% endfor %}
+  </ul>
+  <p><i>Positive values pushed your risk higher; negative values lowered it.</i></p>
+{% endif %}
+-->
+
+    <h3>Recommendations</h3>
+    <ul class="recommendations">
+      {% for rec in recommendations %}
+        <li>{{ rec }}</li>
+      {% endfor %}
+    </ul>
+
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+</div>
+</body>
+</html>

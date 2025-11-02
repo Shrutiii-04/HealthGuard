@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kidney Disease Risk Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Kidney Disease Risk Prediction</h2>
+    <form method="POST" action="/predict_kidney">
+        <label>Serum Creatinine:</label>
+        <input type="number" step="0.1" name="sc" required>
+        <label>Blood Urea:</label>
+        <input type="number" name="bu" required>
+        <label>Hemoglobin:</label>
+        <input type="number" step="0.1" name="hemo" required>
+        <label>Blood Pressure:</label>
+        <input type="number" name="bp" required>
+        <button type="submit">Predict Kidney Disease Risk</button>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </form>
+</div>
+</body>
+</html>

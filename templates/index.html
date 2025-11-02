@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthGuard AI | Advanced Health Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-500: #2456b6;
+            --primary-400: #5cb0ff;
+            --bg-100: #f4f9fd;
+            --card-bg: #fff;
+            --muted-600: #7a9cc6;
+            --success-600: #158442;
+            --danger-600: #a51820;
+            --shadow-01: 0 2px 8px rgba(60,120,240,0.07);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --glass: linear-gradient(120deg, #f4f9fd 0%, #d1e9ff 100%);
+            --accent-gradient: linear-gradient(90deg, var(--primary-400) 0%, var(--primary-500) 100%);
+            --text: #163e75;
+            --text-secondary: #7a9cc6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--glass);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: var(--card-bg);
+            box-shadow: var(--shadow-01);
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-500);
+            text-decoration: none;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--primary-500);
+            color: var(--primary-500);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .hero-text span {
+            color: var(--primary-500);
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-100);
+            border: 1px solid rgba(92,176,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.12s, box-shadow 0.15s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-01);
+        }
+
+        .feature-title {
+            color: var(--primary-500);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: var(--shadow-01);
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">HealthGuard</a>
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-secondary">Sign In</a>
+                <a href="/signup" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Advanced <span>AI-Powered</span> Health Analytics</h1>
+                <p>
+                    Experience the future of preventive healthcare with our cutting-edge AI technology. 
+                    Get personalized health risk assessments and early detection for better health outcomes.
+                </p>
+                <a href="/signup" class="btn btn-primary">Start Your Health Journey</a>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">Multi-Disease Analysis</h3>
+                        <p class="feature-desc">Comprehensive screening for diabetes, heart, kidney, and cardiovascular diseases.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">AI-Driven Insights</h3>
+                        <p class="feature-desc">Advanced machine learning algorithms for accurate risk prediction.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Secure and Private</h3>
+                        <p class="feature-desc">Your health data is encrypted and protected with industry-standard security.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Regular Monitoring</h3>
+                        <p class="feature-desc">Track your health progress and get timely recommendations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="hero-image">
+                <img src="{{ url_for('static', filename='health-analytics.svg') }}" alt="Health Analytics Illustration">
+            </div>-->
+        </div>
+    </section>
+</body>
+</html>

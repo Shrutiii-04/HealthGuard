@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Risk Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Heart Disease Risk Prediction</h2>
+    <form method="POST" action="/predict_heart">
+        <label>Chest Pain Type:</label>
+        <select name="cp" required>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+        <label>Resting Blood Pressure (mm Hg):</label>
+        <input type="number" name="trestbps" required>
+        <label>Cholesterol (mg/dl):</label>
+        <input type="number" name="chol" required>
+        <label>Exercise Induced Angina:</label>
+        <select name="exang" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+        <button type="submit">Predict Heart Disease Risk</button>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </form>
+</div>
+</body>
+</html>

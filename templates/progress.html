@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress & Streaks</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Heart Disease Risk Trend</h2>
+    <canvas id="heartTrendChart"></canvas>
+</div>
+<script>
+    const ctx = document.getElementById('heartTrendChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ dates|tojson }},
+            datasets: [{
+                label: 'Heart Disease Risk',
+                data: {{ risks|tojson }},
+                borderColor: '#e86958',
+                backgroundColor: 'rgba(232,105,88,0.13)',
+                fill: true,
+                tension: 0.28
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 0, max: 1,
+                    ticks: { stepSize:1, callback: v => v ? 'High' : 'Low' }
+                }
+            },
+            plugins: { legend: {display: false} }
+        }
+    });
+</script>
+</body>
+</html>

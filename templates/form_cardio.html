@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cardiovascular Risk Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Cardiovascular Risk Prediction</h2>
+    <form method="POST" action="/predict_cardio">
+        <label>Systolic BP:</label>
+        <input type="number" name="ap_hi" required>
+        <label>Diastolic BP:</label>
+        <input type="number" name="ap_lo" required>
+        <label>Cholesterol (1=Normal,2=Above Normal,3=High):</label>
+        <select name="cholesterol" required>
+            <option value="1">Normal</option>
+            <option value="2">Above Normal</option>
+            <option value="3">High</option>
+        </select>
+        <label>Smoking (0=No,1=Yes):</label>
+        <select name="smoke" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <button type="submit">Predict Cardio Risk</button>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </form>
+</div>
+</body>
+</html>
